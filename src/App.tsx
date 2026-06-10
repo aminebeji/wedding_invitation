@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import PolkaBackground from './components/PolkaBackground'
 import LanguageSwitcher from './components/LanguageSwitcher'
+import SeoHead from './components/SeoHead'
 import WeddingInvitation from './components/WeddingInvitation'
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 import './App.css'
@@ -23,6 +24,7 @@ function AppContent() {
 
   return (
     <div className="app">
+      <SeoHead />
       <PolkaBackground />
       <LanguageSwitcher />
       <WeddingInvitation phase={phase} onOpen={handleOpen} />
