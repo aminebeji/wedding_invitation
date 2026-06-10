@@ -1,0 +1,232 @@
+.invitation {
+  position: relative;
+  width: 100%;
+}
+
+.invitation__paper {
+  position: relative;
+  width: 100%;
+  padding: clamp(1.75rem, 5vw, 3rem) clamp(1.25rem, 4vw, 2.5rem);
+  text-align: center;
+  background-image:
+    radial-gradient(circle, rgba(26, 26, 26, 0.07) 4px, transparent 4px);
+  background-size: 64px 64px;
+}
+
+.invitation__ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.invitation__ornament--bottom {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  gap: 0.75rem;
+}
+
+.ornament-line {
+  width: clamp(40px, 12vw, 70px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
+}
+
+.ornament-heart {
+  color: var(--purple);
+  font-size: 1rem;
+}
+
+.ornament-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--black);
+}
+
+.ornament-dot--purple {
+  background: var(--purple);
+  width: 10px;
+  height: 10px;
+}
+
+.invitation__preheader {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+  font-style: italic;
+  color: var(--purple);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.25rem;
+}
+
+.invitation__names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 7vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.name--groom {
+  color: var(--black);
+}
+
+.name--bride {
+  color: var(--purple);
+}
+
+.name-ampersand {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+  font-style: italic;
+  color: var(--gold);
+  margin: 0.15rem 0;
+}
+
+.invitation__tagline {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 2.8vw, 1rem);
+  font-style: italic;
+  color: rgba(123, 45, 142, 0.7);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.75rem;
+}
+
+.invitation__quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  padding: 0 0.25rem;
+}
+
+.invitation__quote-block {
+  margin: 0;
+}
+
+.invitation__quote-text {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(26, 26, 26, 0.8);
+}
+
+.invitation__quote-source {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 2.4vw, 0.85rem);
+  font-style: normal;
+  color: var(--purple-light);
+  letter-spacing: 0.03em;
+}
+
+.invitation__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.invitation__divider span:first-child,
+.invitation__divider span:last-child {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--black), transparent);
+  opacity: 0.2;
+}
+
+.invitation__divider-icon {
+  color: var(--purple);
+  font-size: 0.85rem;
+}
+
+.invitation__subtitle {
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--black);
+  margin-bottom: 2.5rem;
+  opacity: 0.85;
+}
+
+.invitation__events-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  font-weight: 600;
+  color: var(--purple);
+  margin-bottom: 2rem;
+  letter-spacing: 0.06em;
+}
+
+.invitation__timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  padding-inline-start: 1rem;
+}
+
+.invitation__timeline::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--purple-soft), var(--purple-light), var(--purple-soft));
+  border-radius: 2px;
+}
+
+.invitation__closing {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px dotted rgba(123, 45, 142, 0.25);
+}
+
+.invitation__closing-text {
+  font-size: clamp(0.95rem, 3vw, 1.05rem);
+  line-height: 1.8;
+  color: rgba(26, 26, 26, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+.invitation__closing-text em {
+  color: var(--purple);
+  font-style: italic;
+}
+
+.invitation__signature {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 3vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--black);
+}
+
+.invitation__signature strong {
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+  color: var(--purple);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .invitation__timeline {
+    padding-inline-start: 0;
+  }
+
+  .invitation__timeline::before {
+    display: none;
+  }
+}

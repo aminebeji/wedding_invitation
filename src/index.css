@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #fffef9;
+  --black: #1a1a1a;
+  --purple: #7b2d8e;
+  --purple-light: #9b4db0;
+  --purple-soft: rgba(123, 45, 142, 0.12);
+  --wax-red: #8b1a1a;
+  --wax-dark: #5c0f0f;
+  --gold: #c9a227;
+  --cream: #faf8f2;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100svh;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: clamp(16px, 4vw, 18px);
+  line-height: 1.6;
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+}
+
+#root {
+  min-height: 100svh;
+  min-height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:disabled {
+  cursor: default;
+}

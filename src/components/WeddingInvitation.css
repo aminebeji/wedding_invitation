@@ -1,0 +1,208 @@
+.invite-scene {
+  position: relative;
+  z-index: 10;
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: max(5rem, calc(env(safe-area-inset-top) + 4rem)) 1rem max(2rem, env(safe-area-inset-bottom));
+}
+
+.invite-scene--open {
+  justify-content: flex-start;
+  padding-top: max(4.5rem, calc(env(safe-area-inset-top) + 3.5rem));
+  padding-bottom: max(3rem, env(safe-area-inset-bottom));
+}
+
+.invite-scene__prompt {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  font-style: italic;
+  color: var(--purple);
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 0 1rem;
+  max-width: 90vw;
+}
+
+.invite-scene__hint {
+  font-family: var(--font-body);
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+  font-style: italic;
+  color: rgba(26, 26, 26, 0.45);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.invite-stage {
+  position: relative;
+  width: min(360px, 88vw);
+  height: clamp(200px, 52vw, 250px);
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.invite-stage--revealing {
+  overflow: visible;
+}
+
+.invite-stage--open {
+  width: min(620px, calc(100vw - 2rem));
+  height: auto;
+  min-height: 70vh;
+  overflow: visible;
+  perspective: 1200px;
+  margin-top: 0.5rem;
+}
+
+.envelope-shell {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  transform-style: preserve-3d;
+}
+
+.envelope-shell__back {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--cream) 0%, #ebe4d6 100%);
+  border-radius: 6px;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.envelope-shell__front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 74%;
+  background: linear-gradient(180deg, #ede7da 0%, var(--cream) 100%);
+  clip-path: polygon(0 0, 50% 44%, 100% 0, 100% 100%, 0 100%);
+  border-radius: 0 0 6px 6px;
+  z-index: 3;
+}
+
+.envelope-shell__flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 54%;
+  background: linear-gradient(180deg, #e4ddd0 0%, #ece6da 100%);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  z-index: 6;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+}
+
+.envelope-shell__seal {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+}
+
+.letter-paper {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 92%;
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  --torn-clip: polygon(
+    0.8% 1.2%, 3.5% 0.2%, 7% 1.5%, 11% 0.4%, 15% 1%, 19% 0.3%, 23% 1.4%, 27% 0.5%, 31% 1.1%, 35% 0.2%,
+    39% 1.3%, 43% 0.6%, 47% 1%, 51% 0.3%, 55% 1.2%, 59% 0.4%, 63% 1%, 67% 0.2%, 71% 1.4%, 75% 0.5%,
+    79% 1.1%, 83% 0.3%, 87% 1.2%, 91% 0.4%, 95% 1%, 98.5% 0.6%, 99.5% 3%,
+    99.2% 7%, 100% 11%, 99.3% 15%, 99.8% 19%, 99.1% 23%, 100% 27%, 99.4% 31%, 99.9% 35%, 99.2% 39%,
+    100% 43%, 99.5% 47%, 99.8% 51%, 99.3% 55%, 100% 59%, 99.4% 63%, 99.7% 67%, 99.2% 71%, 100% 75%,
+    99.5% 79%, 99.8% 83%, 99.3% 87%, 100% 91%, 99.6% 95%, 99% 98%,
+    96% 99.4%, 92% 99.1%, 88% 99.6%, 84% 99.2%, 80% 99.7%, 76% 99.3%, 72% 99.8%, 68% 99.2%, 64% 99.6%,
+    60% 99.1%, 56% 99.5%, 52% 99.2%, 48% 99.7%, 44% 99.1%, 40% 99.5%, 36% 99.2%, 32% 99.6%, 28% 99.1%,
+    24% 99.5%, 20% 99.2%, 16% 99.7%, 12% 99.1%, 8% 99.5%, 4% 99.2%, 1% 97%,
+    0.4% 93%, 0.8% 89%, 0.3% 85%, 0.9% 81%, 0.4% 77%, 0.8% 73%, 0.3% 69%, 0.9% 65%, 0.4% 61%,
+    0.8% 57%, 0.3% 53%, 0.9% 49%, 0.4% 45%, 0.8% 41%, 0.3% 37%, 0.9% 33%, 0.4% 29%, 0.8% 25%,
+    0.3% 21%, 0.9% 17%, 0.4% 13%, 0.8% 9%, 0.3% 5%
+  );
+
+  background:
+    linear-gradient(175deg, rgba(248, 240, 220, 0.97) 0%, rgba(238, 224, 195, 0.98) 45%, rgba(228, 210, 175, 0.97) 100%);
+  clip-path: var(--torn-clip);
+  filter:
+    drop-shadow(0 2px 1px rgba(100, 70, 40, 0.15))
+    drop-shadow(0 8px 24px rgba(0, 0, 0, 0.12));
+  overflow: hidden;
+}
+
+.invite-stage--open .letter-paper {
+  width: 100%;
+}
+
+.letter-paper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(139, 100, 60, 0.03) 28px,
+      rgba(139, 100, 60, 0.03) 29px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.letter-paper::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  clip-path: var(--torn-clip);
+  box-shadow: inset 0 0 30px rgba(100, 70, 40, 0.12);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.letter-paper__inner {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .invite-stage {
+    width: min(320px, 92vw);
+    height: clamp(185px, 58vw, 220px);
+  }
+
+  .invite-scene {
+    gap: 1rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+
+  .invite-scene--open {
+    padding-top: max(4rem, calc(env(safe-area-inset-top) + 3rem));
+  }
+
+  .invite-stage--open {
+    width: calc(100vw - 1.5rem);
+  }
+}
+
+@media (max-width: 360px) {
+  .invite-stage {
+    width: 94vw;
+  }
+}

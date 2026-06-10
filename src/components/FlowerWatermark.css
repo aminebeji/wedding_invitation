@@ -1,0 +1,139 @@
+.flower-watermark {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  color: var(--purple);
+}
+
+.flower-watermark__svg {
+  position: absolute;
+  opacity: 0.07;
+}
+
+.flower-watermark__svg--center {
+  width: 50%;
+  max-width: 260px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.06;
+}
+
+.flower-watermark__svg--corner-tl {
+  width: 32%;
+  top: -4%;
+  left: -7%;
+  opacity: 0.065;
+  transform: rotate(-25deg);
+}
+
+.flower-watermark__svg--corner-tr {
+  width: 28%;
+  top: -3%;
+  right: -6%;
+  left: auto;
+  opacity: 0.06;
+  transform: rotate(25deg);
+}
+
+.flower-watermark__svg--corner-bl {
+  width: 30%;
+  bottom: -4%;
+  left: -5%;
+  top: auto;
+  opacity: 0.06;
+  transform: rotate(15deg);
+}
+
+.flower-watermark__svg--corner-br {
+  width: 28%;
+  bottom: -4%;
+  right: -5%;
+  left: auto;
+  top: auto;
+  opacity: 0.065;
+  transform: rotate(140deg);
+}
+
+.flower-watermark__svg--vine-left {
+  width: 14%;
+  left: 2%;
+  top: 18%;
+  opacity: 0.055;
+  transform: rotate(-8deg);
+}
+
+.flower-watermark__svg--vine-right {
+  width: 14%;
+  right: 2%;
+  left: auto;
+  top: 22%;
+  opacity: 0.055;
+  transform: scaleX(-1) rotate(5deg);
+}
+
+.flower-watermark__svg--rose-1 {
+  width: 14%;
+  top: 28%;
+  left: 18%;
+  opacity: 0.06;
+  transform: rotate(-18deg);
+}
+
+.flower-watermark__svg--rose-2 {
+  width: 12%;
+  bottom: 22%;
+  right: 16%;
+  left: auto;
+  top: auto;
+  opacity: 0.055;
+  transform: rotate(22deg);
+}
+
+.flower-watermark__svg--daisy-1 {
+  width: 11%;
+  top: 14%;
+  right: 22%;
+  left: auto;
+  opacity: 0.05;
+  transform: rotate(12deg);
+}
+
+.flower-watermark__svg--daisy-2 {
+  width: 10%;
+  bottom: 30%;
+  left: 14%;
+  top: auto;
+  opacity: 0.05;
+  transform: rotate(-30deg);
+}
+
+.flower-watermark__svg--daisy-3 {
+  width: 9%;
+  bottom: 14%;
+  left: 42%;
+  top: auto;
+  opacity: 0.045;
+  transform: rotate(8deg);
+}
+
+.flower-watermark__svg--top-garland {
+  width: 80%;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.05;
+}
+
+@media (max-width: 480px) {
+  .flower-watermark__svg--center {
+    width: 60%;
+  }
+
+  .flower-watermark__svg--vine-left,
+  .flower-watermark__svg--vine-right {
+    width: 16%;
+  }
+}

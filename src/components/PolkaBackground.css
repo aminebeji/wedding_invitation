@@ -1,0 +1,32 @@
+.polka-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--white);
+  background-image: radial-gradient(circle, var(--black) 5px, transparent 5px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+
+.polka-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.polka-glow--left {
+  width: min(400px, 80vw);
+  height: min(400px, 80vw);
+  top: -100px;
+  left: -100px;
+  background: var(--purple-soft);
+}
+
+.polka-glow--right {
+  width: min(350px, 70vw);
+  height: min(350px, 70vw);
+  bottom: -80px;
+  right: -80px;
+  background: rgba(201, 162, 39, 0.08);
+}
